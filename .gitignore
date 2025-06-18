@@ -1,0 +1,16 @@
+# System
+.DS_Store
+Thumbs.db
+
+# Node/Tailwind build
+node_modules/
+tailwindcss.exe
+*.log
+
+# IDE
+.vscode/
+.idea/
+
+# Production output
+dist/
+*.zip

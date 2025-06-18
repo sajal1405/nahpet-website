@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Book Appointment – NAH Pet Salon</title>
+
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" href="favicon.ico" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+</head>
+<body class="bg-maroon text-white font-manrope">
+
+<!-- ⏳ Preloader -->
+<div id="preloader" class="fixed inset-0 z-50 bg-maroon flex flex-col items-center justify-center gap-4">
+  <div class="flex gap-4 animate-pulse">
+    <img src="assets/svg/paw-icon.svg" class="w-10 invert" />
+    <img src="assets/svg/brush-icon.svg" class="w-10 invert" />
+    <img src="assets/svg/dog-icon.svg" class="w-10 invert" />
+  </div>
+  <p class="text-gold font-playfair text-sm animate-pulse">Preparing fluffy towels and wagging tails...</p>
+</div>
+
+<!-- 🔗 Header -->
+<div id="inject-header"></div>
+
+<!-- 📆 Booking Form -->
+<section class="py-20 px-6 bg-darkMaroon min-h-screen" id="booking">
+  <div class="max-w-6xl mx-auto">
+    <h1 class="text-4xl font-dmserif text-gold text-center mb-10" data-aos="fade-up">Book a Pampering Session</h1>
+    <div class="grid md:grid-cols-2 gap-10" data-aos="fade-up" data-aos-delay="100">
+      
+      <!-- 📝 Form -->
+      <form action="mail.php" method="POST" class="space-y-6 bg-[#1c0101] p-8 rounded-xl border border-gold/20 shadow shadow-gold/10">
+        <div>
+          <label class="block mb-2 text-white/80">Your Name</label>
+          <input type="text" name="name" required class="w-full bg-maroon border border-gold px-4 py-3 rounded focus:outline-none" />
+        </div>
+        <div>
+          <label class="block mb-2 text-white/80">Email Address</label>
+          <input type="email" name="email" required class="w-full bg-maroon border border-gold px-4 py-3 rounded" />
+        </div>
+        <div>
+          <label class="block mb-2 text-white/80">Phone Number</label>
+          <input type="tel" name="phone" required class="w-full bg-maroon border border-gold px-4 py-3 rounded" />
+        </div>
+        <div>
+          <label class="block mb-2 text-white/80">Pet Type</label>
+          <select name="pet" required class="w-full bg-maroon border border-gold px-4 py-3 rounded text-white">
+            <option disabled selected value="">Choose one</option>
+            <option>Dog</option>
+            <option>Cat</option>
+            <option>Bird</option>
+            <option>Rabbit</option>
+          </select>
+        </div>
+        <div>
+          <label class="block mb-2 text-white/80">Preferred Service</label>
+          <select name="service" required class="w-full bg-maroon border border-gold px-4 py-3 rounded text-white">
+            <option disabled selected value="">Choose one</option>
+            <option>Full Grooming</option>
+            <option>Quick Clean-Up</option>
+            <option>Exotic Bird Spa</option>
+            <option>Bunny Beautify</option>
+            <option>Show Styling</option>
+            <option>Pet Boarding</option>
+          </select>
+        </div>
+        <div>
+          <label class="block mb-2 text-white/80">Preferred Date</label>
+          <input type="date" name="date" required class="w-full bg-maroon border border-gold px-4 py-3 rounded text-white" />
+        </div>
+        <div>
+          <label class="block mb-2 text-white/80">Preferred Time</label>
+          <input type="time" name="time" required class="w-full bg-maroon border border-gold px-4 py-3 rounded text-white" />
+        </div>
+        <div>
+          <label class="block mb-2 text-white/80">Additional Notes</label>
+          <textarea name="message" rows="3" class="w-full bg-maroon border border-gold px-4 py-3 rounded text-white"></textarea>
+        </div>
+        <div>
+          <button type="submit" class="bg-gold text-darkMaroon font-bold px-6 py-3 rounded-full hover:scale-105 transition shadow shadow-gold/40 w-full">Confirm Booking</button>
+        </div>
+      </form>
+
+      <!-- 🐾 Info Sidebar -->
+      <div class="flex flex-col gap-6 justify-center text-white/80 bg-[#1c0101] border border-gold/20 rounded-xl p-8 shadow shadow-gold/10">
+        <div class="text-gold font-playfair text-2xl">Need Assistance?</div>
+        <p>Our team is here to help you select the best service for your beloved pet. Call or WhatsApp us now!</p>
+        <div>
+          📞 <a href="tel:+97100000000" class="text-white hover:text-gold">+971 00 000 0000</a><br>
+          💬 <a href="https://wa.me/97100000000" target="_blank" class="text-white hover:text-gold">Message on WhatsApp</a><br>
+          📧 <a href="mailto:hello@nahpetsalon.ae" class="text-white hover:text-gold">hello@nahpetsalon.ae</a>
+        </div>
+        <div class="mt-6">
+          <img src="assets/images/hero-before-after-dog.png" class="w-full rounded-xl" alt="Grooming Visual" />
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- 🔚 Footer -->
+<div id="inject-footer"></div>
+
+<!-- Scripts -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="js/script.js"></script>
+<script>
+  AOS.init();
+  fetch('partials/header.html').then(r => r.text()).then(t => document.getElementById('inject-header').innerHTML = t);
+  fetch('partials/footer.html').then(r => r.text()).then(t => document.getElementById('inject-footer').innerHTML = t);
+</script>
+</body>
+</html>

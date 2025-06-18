@@ -1,0 +1,52 @@
+<!-- partials/header.html -->
+<header id="main-header" class="fixed w-full z-50">
+  <!-- Top bar with logo and action buttons -->
+  <div class="flex justify-between items-center px-6 py-3 bg-maroon backdrop-blur-lg shadow-glow border-b border-gold">
+    <!-- Logo -->
+    <a href="index.html" class="flex items-center space-x-2">
+      <img src="assets/icons/logo.svg" class="h-10" alt="Logo" />
+      <span class="text-gold font-bold text-lg hidden sm:inline">NAH Pet Salon</span>
+    </a>
+    
+    <!-- Action Buttons -->
+    <div class="flex items-center space-x-4">
+      <!-- Language Switch -->
+      <div class="relative group">
+        <button class="w-10 h-10 rounded-full border-2 border-gold flex items-center justify-center transition hover:scale-105">
+          <img src="assets/flags/flag-en.svg" class="w-6 h-6" />
+        </button>
+        <div class="absolute top-12 right-0 bg-darkMaroon text-white rounded shadow-lg hidden group-hover:block z-50">
+          <a href="#" class="flex items-center gap-2 px-4 py-2 hover:bg-maroon transition"><img src="assets/flags/flag-en.svg" class="w-4" />EN</a>
+          <a href="#" class="flex items-center gap-2 px-4 py-2 hover:bg-maroon transition"><img src="assets/flags/flag-ae.svg" class="w-4" />AR</a>
+        </div>
+      </div>
+
+      <!-- Book Now -->
+      <a href="booking.html" class="bg-gold text-darkMaroon font-bold px-5 py-2 rounded-full shadow hover:bg-white transition text-sm">Book Now</a>
+    </div>
+  </div>
+
+  <!-- Floating Navigation Tabs -->
+  <nav id="floating-nav" class="fixed left-1/2 -translate-x-1/2 bottom-4 md:top-4 md:bottom-auto bg-[#1a0202ee] border border-gold px-4 py-2 rounded-2xl shadow-glow flex justify-center space-x-4 md:space-x-6 transition-all">
+    <!-- Nav Link: Home (active) -->
+    <a href="index.html" class="flex flex-col items-center text-maroon bg-gold rounded-xl px-3 py-2 transition-all active-tab">
+      <img src="assets/svg/home-icon.svg" class="w-6 h-6" />
+      <span class="text-xs font-semibold">Home</span>
+    </a>
+
+    <!-- Nav Link: Services -->
+    <a href="services.html" class="flex flex-col items-center text-gold hover:text-white transition-all">
+      <img src="assets/svg/services-icon.svg" class="w-6 h-6 opacity-80" />
+    </a>
+
+    <!-- Nav Link: Gallery -->
+    <a href="#gallery" class="flex flex-col items-center text-gold hover:text-white transition-all">
+      <img src="assets/svg/gallery-icon.svg" class="w-6 h-6 opacity-80" />
+    </a>
+
+    <!-- Nav Link: FAQ -->
+    <a href="#faq" class="flex flex-col items-center text-gold hover:text-white transition-all">
+      <img src="assets/svg/faq-icon.svg" class="w-6 h-6 opacity-80" />
+    </a>
+  </nav>
+</header>

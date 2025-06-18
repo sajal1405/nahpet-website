@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NAH Pet Salon – Premium Grooming</title>
+
+  <!-- Styles & Fonts -->
+  <link rel="stylesheet" href="css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text&family=Manrope:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="icon" href="favicon.ico" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+</head>
+
+<body class="bg-maroon text-white font-manrope overflow-x-hidden">
+
+<!-- 🔁 Animated Preloader -->
+<div id="preloader" class="fixed inset-0 z-50 bg-maroon flex flex-col items-center justify-center gap-4">
+  <div class="flex gap-5 animate-bounce">
+    <img src="assets/svg/dog-icon.svg" class="w-10 h-10 invert" />
+    <img src="assets/svg/cat-icon.svg" class="w-10 h-10 invert" />
+    <img src="assets/svg/bird-icon.svg" class="w-10 h-10 invert" />
+    <img src="assets/svg/rabbit-icon.svg" class="w-10 h-10 invert" />
+    <img src="assets/svg/paw-icon.svg" class="w-10 h-10 invert" />
+  </div>
+  <p class="text-gold font-playfair text-sm animate-pulse">Preparing your furry experience…</p>
+</div>
+
+<!-- 🔗 Header -->
+<div id="inject-header"></div>
+
+<!-- 🐾 Hero Section -->
+<section id="hero" class="relative pt-32 pb-10 px-4 max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center min-h-[calc(100vh-80px)] z-10">
+  <div class="z-10 text-center md:text-left" data-aos="fade-right">
+    <h1 class="text-5xl font-playfair text-gold mb-4">Grooming with Love</h1>
+    <p class="text-white/80 mb-6">Luxury care for dogs, cats, birds, and rabbits in Dubai.</p>
+    <div class="flex gap-4 justify-center md:justify-start">
+      <a href="contact.html#form" class="btn-primary">Book Now</a>
+      <a href="#services" class="btn-secondary">Explore</a>
+    </div>
+  </div>
+  <div class="relative" data-aos="fade-left">
+    <img id="hero-pet" src="assets/images/hero-before-after-dog.png" class="w-full max-h-[70vh] object-contain transition-opacity duration-500 rounded-lg shadow-xl mx-auto" alt="Pet" />
+    <img src="assets/svg/arrow-dog.svg" class="absolute top-6 left-10 w-10 animate-bounce opacity-70" />
+    <img src="assets/svg/paw-icon.svg" class="absolute top-[30%] right-10 w-8 animate-ping opacity-40" />
+    <span class="absolute bottom-6 left-[20%] text-gold text-xs animate-bounce">Woof Woof!</span>
+    <span class="absolute top-[20%] right-[18%] text-gold text-xs animate-bounce">Meow!</span>
+  </div>
+</section>
+
+<!-- 🔁 Scroll-Reveal Sections -->
+<div id="inject-body-content"></div>
+
+<!-- 🦶 Footer -->
+<div id="inject-footer"></div>
+
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="js/script.js"></script>
+<script>
+  window.addEventListener('load', () => {
+    document.getElementById('preloader')?.remove();
+  });
+
+  fetch('partials/header.html').then(r => r.text()).then(t => document.getElementById('inject-header').innerHTML = t);
+  fetch('partials/footer.html').then(r => r.text()).then(t => document.getElementById('inject-footer').innerHTML = t);
+  fetch('partials/home-body-sections.html').then(r => r.text()).then(t => document.getElementById('inject-body-content').innerHTML = t);
+</script>
+</body>
+</html>

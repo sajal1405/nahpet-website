@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admin Dashboard – NAH Pet Salon</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" href="favicon.ico" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text&family=Manrope:wght@400;700&display=swap" rel="stylesheet" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"/>
+</head>
+<body class="bg-maroon text-white font-manrope overflow-x-hidden">
+
+<!-- 🔐 Admin Auth Check -->
+<script>
+  if (localStorage.getItem('nah-admin-auth') !== 'verified') {
+    window.location.href = 'admin.html';
+  }
+</script>
+
+<!-- 🧼 Preloader -->
+<div id="preloader" class="fixed inset-0 z-50 bg-maroon flex flex-col items-center justify-center gap-4">
+  <div class="flex gap-4 animate-pulse">
+    <img src="assets/svg/paw-icon.svg" class="w-10 invert" />
+    <img src="assets/svg/brush-icon.svg" class="w-10 invert" />
+    <img src="assets/svg/dryer-icon.svg" class="w-10 invert" />
+  </div>
+  <p class="text-gold font-playfair text-sm animate-pulse">Loading dashboard for your fur empire...</p>
+</div>
+
+<!-- 📊 Dashboard Layout -->
+<div class="flex min-h-screen">
+
+  <!-- Sidebar -->
+  <aside class="bg-darkMaroon/90 w-64 p-6 space-y-6 hidden md:block">
+    <h2 class="text-2xl font-playfair text-gold mb-8">Admin Panel</h2>
+    <nav class="space-y-4 text-sm">
+      <a href="dashboard.html" class="block bg-gold text-darkMaroon py-2 px-4 rounded font-bold">Dashboard</a>
+      <a href="#" class="block hover:bg-white/10 py-2 px-4 rounded">Bookings</a>
+      <a href="#" class="block hover:bg-white/10 py-2 px-4 rounded">Users</a>
+      <a href="#" class="block hover:bg-white/10 py-2 px-4 rounded">Appointments</a>
+      <a href="#" class="block hover:bg-white/10 py-2 px-4 rounded">Services</a>
+      <button onclick="logout()" class="w-full bg-red-700/80 hover:bg-red-600 py-2 mt-6 text-white rounded">Logout</button>
+    </nav>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="flex-1 p-6 md:p-10 space-y-10">
+    <h1 class="text-3xl font-playfair text-gold">Welcome, Admin</h1>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6" data-aos="fade-up">
+      <div class="bg-darkMaroon p-6 rounded shadow hover:shadow-lg transition">
+        <p class="text-white/60 text-sm mb-1">Bookings</p>
+        <h2 class="text-2xl font-bold text-gold">184</h2>
+      </div>
+      <div class="bg-darkMaroon p-6 rounded shadow hover:shadow-lg transition">
+        <p class="text-white/60 text-sm mb-1">Users</p>
+        <h2 class="text-2xl font-bold text-gold">57</h2>
+      </div>
+      <div class="bg-darkMaroon p-6 rounded shadow hover:shadow-lg transition">
+        <p class="text-white/60 text-sm mb-1">Appointments</p>
+        <h2 class="text-2xl font-bold text-gold">41</h2>
+      </div>
+      <div class="bg-darkMaroon p-6 rounded shadow hover:shadow-lg transition">
+        <p class="text-white/60 text-sm mb-1">Services</p>
+        <h2 class="text-2xl font-bold text-gold">9</h2>
+      </div>
+    </div>
+  </main>
+</div>
+
+<!-- Footer -->
+<footer class="text-center text-white/40 text-xs py-6">
+  Powered by <a href="https://www.fedrixgroup.com" target="_blank" class="underline hover:text-gold">Fedrix MediaLab</a> © <span id="year"></span>
+</footer>
+
+<!-- Scripts -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({ once: true, duration: 800 });
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  window.addEventListener('load', () => {
+    document.getElementById('preloader').style.display = 'none';
+  });
+
+  function logout() {
+    localStorage.removeItem('nah-admin-auth');
+    window.location.href = 'admin.html';
+  }
+</script>
+</body>
+</html>

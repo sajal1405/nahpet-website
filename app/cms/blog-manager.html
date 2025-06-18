@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CMS – Blog Manager</title>
+  <link rel="stylesheet" href="../../css/style.css" />
+</head>
+<body class="bg-darkMaroon text-white font-inter p-8 min-h-screen">
+  <div class="max-w-4xl mx-auto">
+    <h1 class="text-3xl text-gold font-bold mb-6">✍️ Blog Post Manager</h1>
+
+    <form id="blog-form" class="bg-maroon p-4 rounded shadow mb-6">
+      <input type="hidden" id="post-id" />
+      <input type="text" id="title" placeholder="Post Title" class="w-full p-2 mb-2 bg-darkMaroon text-white rounded" required />
+      <textarea id="content" placeholder="Write something amazing..." rows="5" class="w-full p-2 bg-darkMaroon text-white rounded mb-2" required></textarea>
+      <button type="submit" class="bg-gold text-maroon font-bold px-4 py-2 rounded hover:scale-105 transition">Save Post</button>
+    </form>
+
+    <h2 class="text-xl font-semibold mb-4">📝 Existing Posts</h2>
+    <ul id="post-list" class="space-y-2"></ul>
+  </div>
+
+  <script src="js/blog-cms.js"></script>
+</body>
+</html>

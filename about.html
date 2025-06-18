@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Us – NAH Pet Salon</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" href="favicon.ico" />
+</head>
+<body class="bg-maroon text-white font-manrope overflow-x-hidden">
+
+<div id="inject-header"></div>
+
+<section class="pt-32 pb-20 px-6 sm:px-10 md:px-20 max-w-6xl mx-auto">
+  <div class="text-center mb-12" data-aos="fade-up">
+    <h1 class="text-4xl font-dmserif text-gold">Our Story</h1>
+    <p class="text-white/70 mt-4 text-lg">Bringing love and luxury to every grooming session.</p>
+  </div>
+
+  <div class="grid md:grid-cols-2 gap-12 items-center">
+    <div class="space-y-4" data-aos="fade-right">
+      <h2 class="text-2xl font-bold text-gold">Why NAH Pet Salon?</h2>
+      <p class="text-white/80 leading-relaxed">
+        We’re not just groomers — we’re pet lovers. NAH Pet Salon was founded with a mission to pamper pets while keeping them healthy and happy. From dogs and cats to birds and rabbits, every client is treated like royalty.
+      </p>
+      <ul class="text-white/70 mt-4 list-disc list-inside space-y-1">
+        <li>Certified groomers with years of experience</li>
+        <li>Doorstep and in-store grooming</li>
+        <li>Luxury-grade, pet-safe products</li>
+      </ul>
+    </div>
+    <div class="rounded-lg shadow-lg overflow-hidden" data-aos="fade-left">
+      <img src="assets/images/about-team.jpg" alt="Our Team" class="w-full h-auto object-cover" />
+    </div>
+  </div>
+</section>
+
+<div id="inject-footer"></div>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>AOS.init({ duration: 1000 });</script>
+<script>
+  fetch('partials/header.html').then(r => r.text()).then(t => document.getElementById('inject-header').innerHTML = t);
+  fetch('partials/footer.html').then(r => r.text()).then(t => document.getElementById('inject-footer').innerHTML = t);
+</script>
+</body>
+</html>

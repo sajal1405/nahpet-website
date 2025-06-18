@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Privacy Policy – NAH Pet Salon</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" href="favicon.ico" />
+</head>
+<body class="bg-maroon text-white font-manrope leading-relaxed">
+
+<!-- Header -->
+<div id="inject-header"></div>
+
+<section class="pt-36 pb-12 px-6 sm:px-12 max-w-5xl mx-auto">
+  <h1 class="text-4xl font-playfair text-gold mb-6">Privacy Policy</h1>
+  <p class="mb-4 text-white/80">At NAH Pet Salon, we value your privacy and ensure that your data remains protected. This document outlines how we collect, use, and safeguard your information.</p>
+  <h2 class="text-xl text-gold font-semibold mb-2">1. Information We Collect</h2>
+  <p class="mb-4">We collect your name, phone number, and pet details during booking or inquiries. We do not store any payment information.</p>
+  <h2 class="text-xl text-gold font-semibold mb-2">2. Usage of Information</h2>
+  <p class="mb-4">Your information is used solely for providing grooming services, reminders, and personalized care tips.</p>
+  <h2 class="text-xl text-gold font-semibold mb-2">3. Data Security</h2>
+  <p class="mb-4">We use local encrypted systems and do not share your data with third parties.</p>
+  <p class="mt-6 text-sm text-white/60">Last updated: June 2025</p>
+</section>
+
+<!-- Footer -->
+<div id="inject-footer"></div>
+
+<script>
+  fetch('partials/header.html').then(r => r.text()).then(t => document.getElementById('inject-header').innerHTML = t);
+  fetch('partials/footer.html').then(r => r.text()).then(t => document.getElementById('inject-footer').innerHTML = t);
+</script>
+</body>
+</html>

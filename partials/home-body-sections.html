@@ -1,0 +1,99 @@
+<!-- 🌟 FAQ Section -->
+<section class="bg-darkMaroon py-20 px-6" id="faq">
+  <div class="max-w-4xl mx-auto text-center">
+    <h2 class="text-3xl font-dmserif text-gold mb-10" data-aos="fade-up">Frequently Asked Questions</h2>
+    <div class="space-y-6 text-left" id="faq-accordion">
+      <div class="faq-item border border-gold rounded-lg overflow-hidden transition">
+        <button class="faq-question w-full flex justify-between items-center px-4 py-4 text-white font-semibold hover:bg-maroon transition-all duration-300">
+          <span>Do you offer home grooming?</span>
+          <svg class="w-5 h-5 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 4v16m8-8H4"/></svg>
+        </button>
+        <div class="faq-answer px-4 py-3 bg-[#250007] hidden text-white/80">Yes, we offer doorstep grooming in Dubai for cats and dogs.</div>
+      </div>
+      <div class="faq-item border border-gold rounded-lg overflow-hidden transition">
+        <button class="faq-question w-full flex justify-between items-center px-4 py-4 text-white font-semibold hover:bg-maroon transition-all duration-300">
+          <span>How long does grooming take?</span>
+          <svg class="w-5 h-5 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 4v16m8-8H4"/></svg>
+        </button>
+        <div class="faq-answer px-4 py-3 bg-[#250007] hidden text-white/80">Depending on the breed and service, sessions last 30–90 minutes.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 💬 Testimonials -->
+<section class="bg-maroon py-20 px-6 text-center" id="testimonials">
+  <div class="max-w-6xl mx-auto">
+    <h2 class="text-3xl font-dmserif text-gold mb-10" data-aos="fade-up">What Our Clients Say</h2>
+    <div class="swiper testimonial-swiper" data-aos="zoom-in">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide bg-darkMaroon text-white p-6 rounded-xl shadow-lg">
+          “They groomed my parrot with so much care!”<br><span class="text-gold font-semibold">— Noor</span>
+        </div>
+        <div class="swiper-slide bg-darkMaroon text-white p-6 rounded-xl shadow-lg">
+          “My golden retriever loved the spa experience.”<br><span class="text-gold font-semibold">— Khalid</span>
+        </div>
+        <div class="swiper-slide bg-darkMaroon text-white p-6 rounded-xl shadow-lg">
+          “My bunny looked fabulous after the trim!”<br><span class="text-gold font-semibold">— Lina</span>
+        </div>
+      </div>
+      <!-- Add Pagination if needed -->
+      <div class="swiper-pagination mt-6"></div>
+    </div>
+  </div>
+</section>
+
+<!-- 📸 Gallery -->
+<section class="bg-darkMaroon py-20 px-6" id="gallery">
+  <div class="max-w-6xl mx-auto text-center">
+    <h2 class="text-3xl font-dmserif text-gold mb-10" data-aos="fade-up">Our Work</h2>
+    <div class="swiper gallery-swiper" data-aos="fade-up">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide p-2"><img src="/assets/gallery/pet1.jpg" class="rounded-xl shadow-lg transition-transform duration-300 hover:scale-105" alt="Pet Groom 1" /></div>
+        <div class="swiper-slide p-2"><img src="/assets/gallery/pet2.jpg" class="rounded-xl shadow-lg transition-transform duration-300 hover:scale-105" alt="Pet Groom 2" /></div>
+        <div class="swiper-slide p-2"><img src="/assets/gallery/pet3.jpg" class="rounded-xl shadow-lg transition-transform duration-300 hover:scale-105" alt="Pet Groom 3" /></div>
+        <div class="swiper-slide p-2"><img src="/assets/gallery/pet4.jpg" class="rounded-xl shadow-lg transition-transform duration-300 hover:scale-105" alt="Pet Groom 4" /></div>
+      </div>
+      <div class="swiper-pagination mt-6"></div>
+    </div>
+  </div>
+</section>
+
+<!-- 🎯 Accordion Script -->
+<script>
+  document.querySelectorAll('.faq-question').forEach(button => {
+    button.addEventListener('click', () => {
+      const answer = button.nextElementSibling;
+      const icon = button.querySelector('svg');
+      const isOpen = !answer.classList.contains('hidden');
+
+      // Collapse all
+      document.querySelectorAll('.faq-answer').forEach(a => a.classList.add('hidden'));
+      document.querySelectorAll('.faq-question svg').forEach(i => i.classList.remove('rotate-45'));
+
+      if (!isOpen) {
+        answer.classList.remove('hidden');
+        icon.classList.add('rotate-45');
+      }
+    });
+  });
+
+  // Init Swiper
+  const testimonialSwiper = new Swiper('.testimonial-swiper', {
+    loop: true,
+    autoplay: { delay: 5000 },
+    pagination: { el: '.swiper-pagination', clickable: true },
+    slidesPerView: 1,
+    spaceBetween: 20,
+  });
+
+  const gallerySwiper = new Swiper('.gallery-swiper', {
+    loop: true,
+    autoplay: { delay: 4000 },
+    pagination: { el: '.swiper-pagination', clickable: true },
+    breakpoints: {
+      640: { slidesPerView: 2, spaceBetween: 20 },
+      1024: { slidesPerView: 3, spaceBetween: 30 },
+    },
+  });
+</script>

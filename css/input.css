@@ -1,0 +1,106 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 🌟 Typography Enhancements */
+body {
+  @apply bg-maroon text-white font-manrope;
+}
+h1, h2, h3, h4 {
+  @apply font-dmserif text-gold;
+}
+button, a {
+  @apply rounded-full transition-all duration-300 ease-in-out;
+}
+
+/* 🌈 Custom Color Utilities */
+.text-gold {
+  background: linear-gradient(to bottom right, #fff8dc, #d4af37, #a97c00);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.bg-gold {
+  background: linear-gradient(to right, #fff8dc, #d4af37, #a97c00);
+  color: #1a0202;
+}
+.border-gold { border-color: #D4AF37; }
+.bg-maroon { background-color: #1a0202; }
+.bg-darkMaroon { background-color: #290008; }
+.text-darkMaroon { color: #290008; }
+
+.shadow-glow {
+  box-shadow: 0 0 12px rgba(212, 175, 55, 0.4);
+}
+
+/* 🔍 Form Focus */
+input:focus,
+textarea:focus {
+  @apply border-gold bg-maroon outline-none;
+}
+input::placeholder {
+  @apply text-white/60;
+}
+
+/* 🎠 Swiper Tweaks */
+.swiper {
+  width: 100%;
+  padding: 20px 0;
+}
+.swiper-slide {
+  width: 250px;
+  margin-right: 10px;
+  overflow: hidden;
+  border-radius: 0.5rem;
+}
+
+/* 🌀 Preloader Animation */
+@keyframes pet-bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+.animate-pet-bounce {
+  animation: pet-bounce 1.2s infinite ease-in-out;
+}
+
+/* 🔄 Icon Spin */
+@keyframes spin-slow {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+.animate-spin-slow {
+  animation: spin-slow 6s linear infinite;
+}
+
+/* 🎨 Tab Hover Effects */
+.tab-link-transition {
+  transition: all 0.4s ease;
+}
+.tab-active {
+  @apply bg-gold text-maroon shadow-glow font-bold;
+}
+.tab-icon-inactive {
+  stroke: #D4AF37;
+  fill: none;
+}
+
+/* 🧲 Floating Nav Active Tab Highlight */
+.active-tab {
+  box-shadow: 0 0 0 2px #d4af37, inset 0 0 10px #fff8dc;
+}
+
+/* 👣 Touch & Hover */
+#floating-nav a:hover img {
+  transform: scale(1.1);
+  transition: transform 0.3s;
+}
+#floating-nav a:hover span {
+  color: #fff8dc;
+}
+
+/* 🧼 Scroll header logic */
+body.scroll-up #main-header {
+  top: 0;
+}
+body.scroll-down #main-header {
+  top: -100px;
+}
